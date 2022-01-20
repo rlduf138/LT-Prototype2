@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8771004934906826599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8771004934906826649}
+  - component: {fileID: 8771004934906826598}
+  m_Layer: 0
+  m_Name: Script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8771004934906826649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771004934906826599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8771004934906826598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771004934906826599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97f35263afda3148aaf2512c8639635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text_list:
+  - "\uAC70\uAE30 \uC11C\uB77C!"
+  - "\uC624\uB298\uC740 \uC65C \uC774\uB807\uAC8C \uB048\uC9C8\uAE34\uAC70\uC57C!"
+  - "\uC774 \uC77C\uC744 \uB9E1\uB294\uAC8C \uC544\uB2C8\uC5C8\uB294\uB370 \uC820\uC7A5."
+  - "\uC800\uCABD\uC73C\uB85C \uAC04\uB2E4! \uB3C4\uC8FC\uB85C\uB97C \uB9C9\uC544!"
+  - "V, \uC5B4\uB514\uB85C \uAC00\uC57C\uD574?"
+  - "\uACBD\uB85C \uD0D0\uC0C9\uC911.."
+  - "\uACBD\uB85C \uD0D0\uC0C9 \uC644\uB8CC. \uC548\uB0B4 \uC2DC\uC791\uD560\uAC8C\uC694."
+  - "\uB530\uB3CC\uB838\uB098..?"
+  - "\uC8FC\uC704\uC5D0 \uB2E4\uC218\uC758 \uACBD\uCC30 \uBCD1\uB825\uC774 \uBCF4\uC774\uB294\uB370,
+    \uC54C\uC544\uC11C \uB530\uB3CC\uB9AC\uC138\uC694."
+  - "\uD3EC\uC704\uB9DD\uC744 \uC881\uD600!"
+  - "\uC0C8\uB85C \uB9CC\uB4E0 \uB3C4\uAD6C\uB97C \uC368\uBD10\uC57C\uACA0\uC5B4."
+  - "\uC81C \uAC12\uC740 \uD558\uB294\uAC70 \uAC19\uB124. \uACC4\uC18D \uC368\uB3C4
+    \uB418\uACA0\uC5B4."
+  - "\uC26C\uACE0 \uC788\uC744 \uD2C8\uC774 \uC5C6\uB124."
+  - "\uB9C9\uB2E4\uB978 \uACF3\uC73C\uB85C \uAC14\uB2E4. \uCAD3\uC544!"
+  - "\uC815\uB9D0 \uC5EC\uAE30 \uB9DE\uC544? \uB9C9\uB2E4\uB978 \uACF3\uC774\uC796\uC544!"
+  - "\uBB54\uAC00 \uBE5B\uC774 \uB098\uB294\uB370?"
+  - "\uD574\uB2F9 \uBB3C\uCCB4\uB294 \uC9C0\uAE08\uC740 \uC0AC\uC6A9 \uAE08\uC9C0\uB41C
+    \uC6CC\uD504\uAE30\uC778\uB370"
+  - "\uC4F8 \uC218 \uC788\uAC8C \uB9CC\uB4E4\uC5B4 \uB4DC\uB9B4\uD14C\uB2C8 \uADF8\uAC78
+    \uC0AC\uC6A9\uD558\uBA74 \uB418\uC694."
+  - "\uC774\uAC70 \uBC16\uC5D0 \uC5C6\uB294\uAC70\uC57C? \uC548\uC804\uD55C\uAC70
+    \uB9DE\uC544?"
+  - "\uC7A1\uD788\uC2E4\uB798\uC694?"
+  - "... \uB108\uB294 \uC77C\uB2E8 \uAC00\uC11C \uBCF4\uC790."
+  - "\uC77C\uB2E8 \uB4E4\uC5B4\uAC00\uAE30\uB098 \uD558\uC2DC\uC8E0?"
+  portrait_number: 00000000010000000100000000000000020000000800000008000000050000000a0000000000000002000000040000000100000000000000010000000500000008000000080000000500000009000000010000000b000000
+  ilust_list:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: f15865f8a7fcfc3458923dbe4f8bec0d, type: 3}
+  - {fileID: 21300000, guid: 1d35abe9d9969f0498a385a92c94a737, type: 3}
+  - {fileID: 21300000, guid: e0b96083a6ee1b44aa15c18ac5a540d6, type: 3}
+  - {fileID: 21300000, guid: e3dee3de8ce92ce4a8bd878eeb5ebaf8, type: 3}
+  - {fileID: 21300000, guid: b5835ae082b844349b0a392b5b01c455, type: 3}
+  - {fileID: 21300000, guid: 9cc4f32fd79e687428affbd79cd88319, type: 3}
+  - {fileID: 21300000, guid: c37c686e63eef6f458c0a459c8a9bf15, type: 3}
+  - {fileID: 21300000, guid: df9b3cba6b914504195498a4b3d38c82, type: 3}
+  - {fileID: 21300000, guid: 4506d7e38e0ae52429a2d097f7347532, type: 3}
+  - {fileID: 21300000, guid: 29ae7ce4aec44b5449904771956251e0, type: 3}
+  - {fileID: 21300000, guid: d2f79acafae6b0f449ac58b308ff96f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  name_list:
+  - "\uACBD\uCC30"
+  - "\uB124\uC624"
+  - "\uB124\uC624"
+  - "\uB124\uC624"
+  - "\uB124\uC624"
+  - "\uB124\uC624"
+  - "\uB124\uC624"
+  - V
+  - V
+  - V
+  - V
+  - V
+  - 
+  - 
+  - 
