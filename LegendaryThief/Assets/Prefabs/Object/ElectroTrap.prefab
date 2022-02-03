@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84b49674a482744d80e0da175e86d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider2D: {fileID: 3968977055232350419}
   m_animator: {fileID: 4367928796884884727}
 --- !u!95 &4367928796884884727
 Animator:
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6299364948359275047}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6a9b2bb69fc49488073d2f43f4cb2b, type: 3}
   m_Name: 

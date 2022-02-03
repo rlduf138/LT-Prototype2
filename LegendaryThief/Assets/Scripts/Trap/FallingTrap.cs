@@ -74,8 +74,8 @@ public class FallingTrap : MonoBehaviour
             }
             trapObject.transform.position = new Vector2(trapOriginX, trapOriginY);
             yield return new WaitForSeconds(shakeGapTime);
-           /// holder01Anim.SetTrigger("Active");
-           // holder02Anim.SetTrigger("Active");
+            holder01Anim.SetTrigger("Active");
+            holder02Anim.SetTrigger("Active");
             trapObject.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionY;
             trapObject.GetComponent<Rigidbody2D>().gravityScale = trapGravity;
       }

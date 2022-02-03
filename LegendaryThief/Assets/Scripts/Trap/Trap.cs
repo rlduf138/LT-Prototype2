@@ -38,14 +38,11 @@ public class Trap : MonoBehaviour
             if (collision.CompareTag("Player"))
             {
                   Player characterBase = collision.GetComponentInParent<Player>();
-                  if (characterBase != null)
+                  if (characterBase.isInvinsible == false)
                   {
-                        if (characterBase.isInvinsible == false)
-                        {
-                              characterBase.OnDamage(1, transform.position);  // 캐릭터 데미지 주고.
-                                                                              // 시작지점으로 보낸다.
-                                                                              //stage.CharacterDameged();
-                        }
+                        characterBase.OnDamage(1, transform.position);  // 캐릭터 데미지 주고.
+                        // 시작지점으로 보낸다.
+                        //stage.CharacterDameged();
                   }
             }
       }
@@ -54,19 +51,11 @@ public class Trap : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                   Player characterBase = collision.gameObject.GetComponentInParent<Player>();
-                  Hologram hologram = collision.gameObject.GetComponent<Hologram>();
-
-                  if (characterBase != null)
+                  if (characterBase.isInvinsible == false)
                   {
-                        if (characterBase.isInvinsible == false)
-                        {
-                              characterBase.OnDamage(1, transform.position);  // 캐릭터 데미지 주고.
-                                                                              // 시작지점으로 보낸다.
-                                                                              //stage.CharacterDameged();
-                        }
-                  }else if(hologram != null)
-                  {
-                     //   hologram.OnDamage(1, transform.position);
+                        characterBase.OnDamage(1, transform.position);  // 캐릭터 데미지 주고.
+                        // 시작지점으로 보낸다.
+                        //stage.CharacterDameged();
                   }
             }
       }

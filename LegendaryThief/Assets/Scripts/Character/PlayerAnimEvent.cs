@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerAnimEvent : MonoBehaviour
 {
       // References to effect prefabs. These are set in the inspector
-      public bool isHologram = false;
-
       [Header("Effects")]
       public GameObject m_RunStopDust;
       public GameObject m_JumpDust;
@@ -17,16 +15,12 @@ public class PlayerAnimEvent : MonoBehaviour
       public GameObject m_DashDust;
      
       private Player m_player;
-      private Hologram m_hologram;
       private PlayerAudioManager m_audioManager;
 
       // Start is called before the first frame update
       void Start()
     {
-            if (isHologram)
-                  m_hologram = GetComponentInParent<Hologram>();
-            else
-                  m_player = GetComponentInParent<Player>();
+            m_player = GetComponentInParent<Player>();
             m_audioManager = PlayerAudioManager.instance;
       }
 
@@ -37,17 +31,11 @@ public class PlayerAnimEvent : MonoBehaviour
             m_player.ResetDodging();
             float dustXOffset = 0.6f;
             float dustYOffset = 0.078125f;
-            if(isHologram)
-                  m_hologram.SpawnDustEffect(m_RunStopDust, dustXOffset, dustYOffset);
-            else
-                  m_player.SpawnDustEffect(m_RunStopDust, dustXOffset, dustYOffset);
+            m_player.SpawnDustEffect(m_RunStopDust, dustXOffset, dustYOffset);
       }
 
       void AE_setPositionToClimbPosition()
       {
-            if(isHologram)
-                  m_hologram.SetPositionToClimbPosition();
-            else
             m_player.SetPositionToClimbPosition();
       }
 
@@ -56,10 +44,7 @@ public class PlayerAnimEvent : MonoBehaviour
             m_audioManager.PlaySound("RunStop");
             float dustXOffset = 0.6f;
             float dustYOffset = 0.078125f;
-            if(isHologram)
-                  m_hologram.SpawnDustEffect(m_RunStopDust, dustXOffset, dustYOffset);
-            else
-                  m_player.SpawnDustEffect(m_RunStopDust, dustXOffset, dustYOffset);
+            m_player.SpawnDustEffect(m_RunStopDust, dustXOffset, dustYOffset);
       }
 
       void AE_footstep()
@@ -70,29 +55,15 @@ public class PlayerAnimEvent : MonoBehaviour
       void AE_Jump()
       {
             m_audioManager.PlaySound("Jump");
-            if (isHologram)
+
+            if (!m_player.IsWallSliding())
             {
-                  if (!m_hologram.IsWallSliding())
-                  {
-                        float dustYOffset = 0.078125f;
-                        m_hologram.SpawnDustEffect(m_JumpDust, 0.0f, dustYOffset);
-                  }
-                  else
-                  {
-                        m_hologram.SpawnDustEffect(m_WallJumpDust);
-                  }
+                  float dustYOffset = 0.078125f;
+                  m_player.SpawnDustEffect(m_JumpDust, 0.0f, dustYOffset);
             }
             else
             {
-                  if (!m_player.IsWallSliding())
-                  {
-                        float dustYOffset = 0.078125f;
-                        m_player.SpawnDustEffect(m_JumpDust, 0.0f, dustYOffset);
-                  }
-                  else
-                  {
-                        m_player.SpawnDustEffect(m_WallJumpDust);
-                  }
+                  m_player.SpawnDustEffect(m_WallJumpDust);
             }
       }
 
@@ -100,10 +71,7 @@ public class PlayerAnimEvent : MonoBehaviour
       {
             m_audioManager.PlaySound("Landing");
             float dustYOffset = 0.078125f;
-            if(isHologram)
-                  m_hologram.SpawnDustEffect(m_LandingDust, 0.0f, dustYOffset);
-            else
-                  m_player.SpawnDustEffect(m_LandingDust, 0.0f, dustYOffset);
+            m_player.SpawnDustEffect(m_LandingDust, 0.0f, dustYOffset);
       }
 
       void AE_DashEnd()
@@ -147,34 +115,15 @@ public class PlayerAnimEvent : MonoBehaviour
 
       void AE_WallSlide()
       {
-            Debug.Log("WallSlide");
             //m_audioManager.GetComponent<AudioSource>().loop = true;
             if (!m_audioManager.IsPlaying("WallSlide"))
                   m_audioManager.PlaySound("WallSlide");
-            
-            if(isHologram)
-                  m_hologram.SetWallslideGravity();
-            else
-                  m_player.SetWallslideGravity();
-            //m_player.SpawnDustEffect(m_WallSlideDust, dustXOffset, dustYOffset);
+            float dustXOffset = 0.25f;
+            float dustYOffset = 0.25f;
+            m_player.SetWallslideGravity();
+            m_player.SpawnDustEffect(m_WallSlideDust, dustXOffset, dustYOffset);
       }
 
-      void AE_CrouchStart()
-      {
-            if (isHologram)
-            {
-                  m_hologram.CrouchStart();
-            }else
-                  m_player.CrouchStart();
-      }
-      void AE_CrouchEnd()
-      {
-            if (isHologram)
-            {
-                  m_hologram.CrouchEnd();
-            }else
-                  m_player.CrouchEnd();
-      }
       void AE_LedgeGrab()
       {
             m_audioManager.PlaySound("LedgeGrab");
@@ -183,10 +132,5 @@ public class PlayerAnimEvent : MonoBehaviour
       void AE_LedgeClimb()
       {
             m_audioManager.PlaySound("RunStop");
-      }
-
-      void AE_MeditationEnd()
-      {
-            m_player.MeditationEndAnim();
       }
 }

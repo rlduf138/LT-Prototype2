@@ -37,11 +37,11 @@ public class HiddenDoor : MonoBehaviour
             if (collision.gameObject.CompareTag("Player"))
             {
                   Player player = collision.gameObject.GetComponent<Player>();
-                //  if (player.m_wallHit)
-               //   {
-                //        stack--;
-                //        StartCoroutine("ShakeDoor");
-                //  }
+                  if (player.m_wallHit)
+                  {
+                        stack--;
+                        StartCoroutine("ShakeDoor");
+                  }
             }
       }
 

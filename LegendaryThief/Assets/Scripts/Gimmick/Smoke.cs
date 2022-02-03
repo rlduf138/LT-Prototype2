@@ -8,7 +8,7 @@ public class Smoke : MonoBehaviour
       public float onTime;
       public float offTime = 0f;
       public float delayTime = 0f;
-      public bool noAuto = false;         // false : 자동으로 꺼졌다 켜졌다.  true : 계속 켜짐
+      public bool noAuto = false;
       public Animator m_animator;
       // Start is called before the first frame update
       void Start()
@@ -17,10 +17,8 @@ public class Smoke : MonoBehaviour
       }
       private void OnEnable()
       {
-            if (!noAuto)
+            if(!noAuto)
                   StartCoroutine("Smoking");
-            else
-                  SmokeOn();
       }
       // Update is called once per frame
       void Update()
@@ -58,24 +56,13 @@ public class Smoke : MonoBehaviour
       {
             if (collision.gameObject.tag == "Player")
             {
-                  Player ch = collision.GetComponent<Player>();
-                  Hologram hologram = collision.gameObject.GetComponent<Hologram>();
-
-                  if (ch != null)
+                  Player characterBase = collision.gameObject.GetComponentInParent<Player>();
+                  if (characterBase.isInvinsible == false)
                   {
-                      
-                              ch.OnDamage(1f, transform.position);
-                              Debug.Log("SmokeHit");
-                      
+                        characterBase.OnDamage(1, transform.position);  // 캐릭터 데미지 주고.
+                        // 시작지점으로 보낸다.
+                        //stage.CharacterDameged();
                   }
-                  else if (hologram != null)
-                  {
-                       
-                          //    hologram.OnDamage(1f, transform.position);
-                              Debug.Log("SmokeHit");
-                      
-                  }
-                  
             }
       }
 }

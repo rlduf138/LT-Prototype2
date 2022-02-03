@@ -4,8 +4,8 @@ using System.Collections;
 public class Sensor_Prototype : MonoBehaviour
 {
 
-      public int m_ColCount = 0;
-      public int m_WallCount = 0;
+      private int m_ColCount = 0;
+      private int m_WallCount = 0;
       public float m_DisableTimer;
       public bool m_ground;
 
@@ -78,7 +78,7 @@ public class Sensor_Prototype : MonoBehaviour
 
       public void Disable(float duration)
       {
-            //Debug.Log("Disable + " + duration);
+            Debug.Log("Disable + " + duration);
             m_DisableTimer = duration;
       }
 }

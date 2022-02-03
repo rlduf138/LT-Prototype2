@@ -28,10 +28,10 @@ public class CameraFollow : MonoBehaviour
             float maxClamp = Mathf.Clamp(target.position.y, yMin, yMax);
             transform.position = new Vector3(minClamp, maxClamp, -10);
             // 타일 좌표가 가장 낮은것과 가장 높은것의 Vector3 값을 찾느다.
-          //  minTile = tilemap.CellToWorld(tilemap.cellBounds.min);
-           // maxTile = tilemap.CellToWorld(tilemap.cellBounds.max);
+            minTile = tilemap.CellToWorld(tilemap.cellBounds.min);
+            maxTile = tilemap.CellToWorld(tilemap.cellBounds.max);
 
-          //  SetLimits(minTile, maxTile);
+            SetLimits(minTile, maxTile);
 
           
       }
@@ -46,7 +46,7 @@ public class CameraFollow : MonoBehaviour
 
           //  Debug.Log("DesiredPosition " + desiredPosition);
 
-            Vector3 nextPos = Vector2.MoveTowards(transform.position, target.position, lerpSpeed * Time.deltaTime);
+               Vector3 nextPos = Vector2.MoveTowards(transform.position, target.position, lerpSpeed * Time.deltaTime);
             transform.position = nextPos;
             transform.position = new Vector3(minClamp, maxClamp, -10);
 
@@ -59,15 +59,6 @@ public class CameraFollow : MonoBehaviour
             
             //background.MoveBackGround(desiredPosition);
             // 카메라 이동시, 배경도 이동.
-      }
-
-      public void SetCameraPlayer()
-      {
-            target = FindObjectOfType<Player>().transform;
-      }
-      public void SetCameraHologram()
-      {
-            target = FindObjectOfType<Hologram>().transform;
       }
 
       // 카메라의 이동범위 결정.

@@ -12,7 +12,7 @@ public class FadeController : Singleton<FadeController>
       public float sceneSpeed;
       public float fadeInTime;
       public float fadeOutTime;
-     //////// public OptionController menuObject;
+      public OptionController menuObject;
       public void FadeIn( System.Action nextEvent = null)
       {
             StartCoroutine(CoFadeIn( nextEvent));
@@ -49,7 +49,7 @@ public class FadeController : Singleton<FadeController>
 
             OptionController menuObject = FindObjectOfType<OptionController>();
             Debug.Log("Menu off");
-            ////////menuObject.canUse = false;    // 메뉴 조작 막기
+            menuObject.canUse = false;    // 메뉴 조작 막기
             fadeImg.gameObject.SetActive(true);
 
             //SpriteRenderer sr = this.gameObject.GetComponent<SpriteRenderer>();
@@ -124,9 +124,9 @@ public class FadeController : Singleton<FadeController>
            // CharacterBase characterBase = FindObjectOfType<CharacterBase>();
          //   characterBase.isTuto = true;  // 캐릭터 조작 막기
 
-       //////////     menuObject = FindObjectOfType<OptionController>();
+            menuObject = FindObjectOfType<OptionController>();
             Debug.Log("Menu Off");
-        //////////    menuObject.canUse = false;
+            menuObject.canUse = false;
 
             for (int i = 0; i<changeList.Length; i++)
             {
@@ -135,7 +135,7 @@ public class FadeController : Singleton<FadeController>
             }
 
             Debug.Log("Menu On");
-        /////////    menuObject.canUse = true;     // 메뉴 조작 풀기
+            menuObject.canUse = true;     // 메뉴 조작 풀기
         //    characterBase.isTuto = false; // 캐릭터 조작 풀기
 
             changeImg.gameObject.SetActive(false);

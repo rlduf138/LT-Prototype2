@@ -9,13 +9,13 @@ public class TitleController : MonoBehaviour
 
       private void Awake()
       {
-         /*   bgmController = FindObjectOfType<BGMController>();
+            bgmController = FindObjectOfType<BGMController>();
             if (bgmController == null)
             {
                   GameObject obj;
                   obj = Instantiate(bgmPrefab);
                   bgmController = obj.GetComponent<BGMController>();
-            }*/
+            }
 
             GameObject checker = GameObject.FindGameObjectWithTag("Menu");
             if (checker != null)
@@ -27,7 +27,7 @@ public class TitleController : MonoBehaviour
       void Start()
       {
             FadeController.Instance.TitleFadeOut();
-          //  bgmController.ChangeTitleBGM();
+            bgmController.ChangeTitleBGM();
       }
 
       void Update()
@@ -60,6 +60,6 @@ public class TitleController : MonoBehaviour
                         .LoadSceneAsync("Tutorial");
             }*/
             UnityEngine.SceneManagement.SceneManager
-                        .LoadSceneAsync("NewAgit");
+                        .LoadSceneAsync("Ehop01");
       }
 }

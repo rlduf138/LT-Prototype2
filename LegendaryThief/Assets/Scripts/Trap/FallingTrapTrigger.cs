@@ -9,22 +9,11 @@ public class FallingTrapTrigger : MonoBehaviour
             if (collision.CompareTag("Player"))
             {
                   Debug.Log("FallingTrapTriggerActive");
-                  Player ch = collision.GetComponent<Player>();
-                  Hologram hologram = collision.gameObject.GetComponent<Hologram>();
-                  if (ch != null)
+                  Player ch =  collision.GetComponent<Player>();
+                  if(ch.IsGround())
                   {
-                        if (ch.IsGround())
-                        {
-                              ch.OnDamage(1f, transform.position);
-                              Debug.Log("FallingTrapHit");
-                        }
-                  }else if(hologram != null)
-                  {
-                        if (hologram.IsGround())
-                        {
-                              hologram.OnDamage(1f, transform.position);
-                              Debug.Log("FallingTrapHit");
-                        }
+                        ch.OnDamage(1f, transform.position);
+                        Debug.Log("FallingTrapHit");
                   }
             }
       }
