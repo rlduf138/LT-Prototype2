@@ -12,7 +12,7 @@
 <img src = "./LegendaryThief/img/01.PNG" width = "50%" height = "50%" title = "px Set" alt = "LT1"></img><img src = "./LegendaryThief/img/02.PNG" width = "50%" height = "50%" title = "px Set" alt = "LT2"></img>
 <img src = "./LegendaryThief/img/03.PNG" width = "50%" height = "50%" title = "px Set" alt = "LT3"></img><img src = "./LegendaryThief/img/04.PNG" width = "50%" height = "50%" title = "px Set" alt = "LT4"></img>
 
-게임 플레이 영상 : 
+게임 플레이 영상 : https://youtu.be/Zt18w_t6DsU
 
 **게임 소개**
 > 레퍼런스 게임 : **Celeste**    
